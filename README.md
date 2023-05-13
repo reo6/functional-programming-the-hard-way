@@ -1,3 +1,13 @@
+- [Getting Started](https://github.com/reo6/functional-programming-the-hard-way#getting-started)
+- [Preparation](https://github.com/reo6/functional-programming-the-hard-way#preparation)
+  - [Hello, map!](https://github.com/reo6/functional-programming-the-hard-way#hello-map)
+  - [Anonymous Functions](https://github.com/reo6/functional-programming-the-hard-way#anonymous-function-ie-lambda)
+- [Part 1: Parsing Numbers](https://github.com/reo6/functional-programming-the-hard-way#part-1-parsing-numbers)
+- [Part 2: Hard Part](https://github.com/reo6/functional-programming-the-hard-way#part-2-hard-part)
+  - [Anatomy of a recursive function](https://github.com/reo6/functional-programming-the-hard-way#anatomy-of-a-recursive-function)
+- [Part 3: Easier Part](https://github.com/reo6/functional-programming-the-hard-way#part-3-easier-part)
+
+
 # Functional Programming, the Hard Way
 
 This document is a _gentle_ introduction to the paradigm of functional programming for beginners. You are going to face some tough Python, fasten seat bells and stay tight.
