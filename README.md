@@ -282,5 +282,5 @@ if __name__ == "__main__":
     main()
 ```
 
-> Exercise: I changed the fold code, its now a "foldr" instead of a "foldl", which means it starts applying from right. Read and interpret the code.
+> Exercise: I changed the fold code, it's now a "foldr" instead of a "foldl", which means it starts applying from right. Read and interpret the code.
 
