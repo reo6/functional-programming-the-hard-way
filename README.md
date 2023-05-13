@@ -234,3 +234,53 @@ Recursive functions are simply functions that call themselves. They have **Base 
 They also have **Recursive Cases** which is the part where they call themselves with little modifications in arguments. For example, in the code above, recursion calls change the initial value of the fold by calling our target function on first element of the list and the initial value (``func(initial, l[0]``), and serve the list without its first element (since it's already processed).
 
 Our _Base Case_ here returns the initial value instead of calling itself again if the given list is empty. You can try to draw a diagram to understand how is this useful.
+
+## Part 3: Easier Part
+
+Alright, let's combine our ``fold`` with our previous code and add a few more modifications. I'm not going to deep dive into details. Just make sure you don't miss anything.
+
+```python
+from collections.abc import Callable, Iterable
+import operator
+
+OPERATORS = {
+    # "operator": (function, initial)
+    "+": (operator.add, 0),
+    "-": (operator.sub, 0),
+    "*": (operator.mul, 1),
+    "/": (operator.truediv, 1),
+}
+
+def main():
+    numbers  = input("Please enter numbers: ")
+    operator = input("Please select the operation you want to perform [*, /, +, -]: ")
+
+    result = solution(numbers, operator)
+    print(result)
+
+def fold(func: Callable[[int, int], int], l: Iterable[int], initial: int=0) -> Iterable[int]:
+    if l == []:
+        return initial
+
+    return func(l[0], fold(func, l[1:], initial))
+
+class UnknownOperatorError(Exception): pass
+
+def solution(numbers, operator):
+    try:
+        operator, initial = OPERATORS[operator]
+    except KeyError:
+        raise UnknownOperatorError(f"{operator} operator is unknown.")
+
+    return fold(
+        operator,
+        list(map(int, numbers.split())),
+        initial,
+    )
+
+if __name__ == "__main__":
+    main()
+```
+
+> Exercise: I changed the fold code, its now a "foldr" instead of a "foldl", which means it starts applying from right. Read and interpret the code.
+
